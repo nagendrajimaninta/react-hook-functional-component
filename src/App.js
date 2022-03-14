@@ -1,10 +1,13 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import "./style.css";
 function Counter(){
   const [count,setCount] = useState(10);
   function increment (){
     setCount(count+1)
   };
+  useEffect(() => {
+    alert("Number of clicks: " + count);
+  });
   const style={
     color:"black",
     backgroundColor:"green"
@@ -28,6 +31,7 @@ function Counter(){
 export default function App() {
   return (
     <div>
+      <Counter />
       <Counter />
       <h1>Hooks Only be used in functional component</h1>
       <p>Counter app By using the useState Hook</p>
